@@ -17,16 +17,35 @@ Buon lavoro e buon divertimento!
 
 
 /*creiamo un array di cognomi  */
-var surname = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
+var lastName = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
+/*prendiamo il riferimento in pagina html dove inserire la lista*/
+var listElement = document.getElementById("list")
 
-/*chiediamo il cognome all'utente*/
-var surnameUser = prompt("inserisci il tuo cognome");
+var surnameUser;
+do {
+  /*chiediamo il cognome all'utente*/
+  var surnameUser = prompt("inserisci il tuo cognome", "De Santis");
+
+  /*controllo se l'inserimento è vuoto o viene inserita una lista vuota con delgi spazzi */
+} while (!surnameUser || surnameUser.trim() === (""));
+
+surnameUser = surnameUser.trim()
+
 /*inseriamo il cognome nell'array */
-surname.push(surnameUser)
+lastName.push(surnameUser)
 /*ordiniamo alfabeticamente i cognomi nell'array  */
-console.table(surname.sort())
-/*stampiamo in pagina e il log la lista  */
+/*stampiamo  in log la lista  */
+console.table(lastName.sort())
 /*identifichiamo la posizione del nuovo utente */
+console.log("Il nuovo cognome è in posizione: ", lastName.indexOf(surnameUser) + 1);
+/*stampiamo in pagina  */
+var listItems = ""
+for (var i = 0; i < lastName.length; i++) {
+  listItems += "<li>" + lastName[i] + "</li>";
+}
+listElement.innerHTML = listItems;
 
+var positionElement = document.getElementById("position");
+positionElement.innerText = "Il nuovo cognome è in posizione: " + (lastName.indexOf(surnameUser) + 1);
 
 
