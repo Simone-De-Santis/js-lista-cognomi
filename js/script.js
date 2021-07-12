@@ -25,11 +25,29 @@ var surnameUser;
 do {
   /*chiediamo il cognome all'utente*/
   var surnameUser = prompt("inserisci il tuo cognome", "De Santis");
-
   /*controllo se l'inserimento è vuoto o viene inserita una lista vuota con delgi spazzi */
 } while (!surnameUser || surnameUser.trim() === (""));
 
 surnameUser = surnameUser.trim()
+// | ***********************************
+//capitalize metod forzed
+var firstLetter = surnameUser.charAt(0).toUpperCase();
+var restLetter = surnameUser.substring(1).toLocaleLowerCase();
+surnameUser = firstLetter + restLetter;
+
+console.log(firstLetter)
+
+
+
+
+
+
+
+
+
+
+// | ***********************************
+
 
 /*inseriamo il cognome nell'array */
 lastName.push(surnameUser)
