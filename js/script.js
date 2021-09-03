@@ -29,19 +29,19 @@ do {
 } while (!surnameUser || surnameUser.trim() === (""));
 
 surnameUser = surnameUser.trim()
+
+
+
 // | ***********************************
+
 //capitalize metod forzed
+
+
 var firstLetter = surnameUser.charAt(0).toUpperCase();
 var restLetter = surnameUser.substring(1).toLocaleLowerCase();
 surnameUser = firstLetter + restLetter;
 
 console.log(firstLetter)
-
-
-
-
-
-
 
 
 
